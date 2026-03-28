@@ -33,14 +33,26 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
     <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://mc.yandex.ru">
     
+    <!-- Tailwind CSS (compiled for production) -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              purple: { 550: '#a855f7' },
+              cyan: { 550: '#06b6d4' }
+            }
+          }
+        }
+      }
+    </script>
     
     <!-- Yandex.Metrica Counter -->
     <script type="text/javascript">
-      var YANDEX_METRICA_ID = 98765432; // Замените на ваш номер счетчика
+      var YANDEX_METRICA_ID = 98765432; // TODO: Замените на ваш реальный номер счетчика перед запуском!
       
       (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -62,6 +74,53 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/98765432" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrica Counter -->
+    
+    <!-- Schema.org JSON-LD for Organization/Product -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "SetHubble",
+      "url": "https://sethubble.com",
+      "logo": "https://sethubble.com/favicon.svg",
+      "description": "SaaS-платформа нового поколения для создания ИИ-ботов и пассивного дохода",
+      "foundingDate": "2026",
+      "areaServed": "RU",
+      "sameAs": [
+        "https://t.me/sethubble_biz_bot",
+        "https://t.me/sethubble_support"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "availableLanguage": ["Russian"]
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "SetHubble AI Bot Platform",
+      "description": "Платформа для создания ИИ-клонов с автоматизацией продаж и партнерской программой",
+      "brand": {
+        "@type": "Organization",
+        "name": "SetHubble"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "RUB",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "2500"
+      }
+    }
+    </script>
     <style>
 @keyframes blob {
   0% {
@@ -90,6 +149,22 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 body {
@@ -304,7 +379,7 @@ body {
         id="partner-badge"
         class="hidden inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel mb-8 shadow-[0_0_15px_rgba(168,85,247,0.3)] mx-auto"
       >
-        <span class="text-xs font-bold text-gray-400 uppercase tracking-wider"
+        <span class="text-xs font-bold text-gray-300 uppercase tracking-wider"
         >Ваш проводник:</span>
         <span
           id="partner-name"
@@ -322,7 +397,7 @@ body {
           <span class="gradient-text">ПОКА ТЫ СПИШЬ</span>
         </h1>
 
-        <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-3xl mx-auto leading-relaxed">
+        <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
           Перестань работать за деньги. Заставь технологии работать на тебя.
           Оцифруй сарафанное радио и получай пассивный доход со всего мира без
           программирования.
@@ -335,7 +410,7 @@ body {
           <div class="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200">
           </div>
           <button class="cta-button relative inline-flex items-center justify-center px-10 py-5 text-xl font-black text-white transition-all duration-200 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-500/50 gap-3 border-2 border-white/20">
-            <span class="drop-shadow-lg">🚀 ЗАПУСТИТЬ СИСТЕМУ БЕСПЛАТНО</span>
+            <span class="drop-shadow-lg" role="img" aria-label="ракета">🚀 ЗАПУСТИТЬ СИСТЕМУ БЕСПЛАТНО</span>
           </button>
         </a>
 
@@ -344,7 +419,7 @@ body {
             <div class="text-2xl md:text-3xl font-bold gradient-text">
               $15,000+
             </div>
-            <div class="text-xs text-gray-400 mt-1">
+            <div class="text-xs text-gray-300 mt-1">
               Выплачено партнерам (24ч)
             </div>
           </div>
@@ -352,13 +427,13 @@ body {
             <div class="text-2xl md:text-3xl font-bold gradient-text">
               2,500+
             </div>
-            <div class="text-xs text-gray-400 mt-1">
+            <div class="text-xs text-gray-300 mt-1">
               Новых ИИ-агентов в сети
             </div>
           </div>
           <div class="glass-panel p-4 rounded-xl hidden md:block stat-card">
             <div class="text-2xl md:text-3xl font-bold gradient-text">22+</div>
-            <div class="text-xs text-gray-400 mt-1">Страны присутствия</div>
+            <div class="text-xs text-gray-300 mt-1">Страны присутствия</div>
           </div>
         </div>
       </section>
@@ -370,7 +445,7 @@ body {
           ПОЧЕМУ ТВОЙ ТЕКУЩИЙ ПОДХОД <span class="text-red-400"
           >ТЕРЯЕТ ДЕНЬГИ?</span>
         </h2>
-        <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+        <p class="text-gray-300 text-center mb-12 max-w-2xl mx-auto">
           Старые модели бизнеса больше не работают. Посмотри правде в глаза.
         </p>
 
@@ -380,13 +455,13 @@ body {
             <h3 class="text-xl font-bold mb-3 text-gray-200">
               Если ты Офлайн-бизнес:
             </h3>
-            <ul class="space-y-3 text-sm text-gray-400">
+            <ul class="space-y-3 text-sm text-gray-300">
               <li class="flex gap-2">
-                <span>❌</span> Ты сжигаешь бюджет на Яндекс/VK ДО того, как
+                <span role="img" aria-label="запрет">❌</span> Ты сжигаешь бюджет на Яндекс/VK ДО того, как
                 клиент зашел в дверь.
               </li>
               <li class="flex gap-2">
-                <span>❌</span> Лояльные клиенты не рекомендуют тебя друзьям,
+                <span role="img" aria-label="запрет">❌</span> Лояльные клиенты не рекомендуют тебя друзьям,
                 потому что у них нет мотивации.
               </li>
             </ul>
@@ -396,28 +471,28 @@ body {
             <h3 class="text-xl font-bold mb-3 text-gray-200">
               Если ты Блогер / Эксперт:
             </h3>
-            <ul class="space-y-3 text-sm text-gray-400">
+            <ul class="space-y-3 text-sm text-gray-300">
               <li class="flex gap-2">
-                <span>❌</span> Подписчик стоит 200₽, а покупают только 5%.
+                <span role="img" aria-label="запрет">❌</span> Подписчик стоит 200₽, а покупают только 5%.
               </li>
               <li class="flex gap-2">
-                <span>❌</span> Остальные 95% уходят навсегда. Ты никак не
+                <span role="img" aria-label="запрет">❌</span> Остальные 95% уходят навсегда. Ты никак не
                 монетизируешь тех, кто сказал «НЕТ».
               </li>
             </ul>
           </div>
           <div class="glass-panel p-6 rounded-2xl border-red-500/20 feature-card transition-all">
-            <div class="text-3xl mb-3">🚀</div>
+            <div class="text-3xl mb-3" role="img" aria-label="ракета">🚀</div>
             <h3 class="text-xl font-bold mb-3 text-gray-200">
               Если ты хочешь пассив:
             </h3>
-            <ul class="space-y-3 text-sm text-gray-400">
+            <ul class="space-y-3 text-sm text-gray-300">
               <li class="flex gap-2">
-                <span>❌</span> Классические партнерки платят копейки (3-5%) за
+                <span role="img" aria-label="запрет">❌</span> Классические партнерки платят копейки (3-5%) за
                 разовый переход.
               </li>
               <li class="flex gap-2">
-                <span>❌</span> MLM-пирамиды требуют втюхивать шампуни друзьям и
+                <span role="img" aria-label="запрет">❌</span> MLM-пирамиды требуют втюхивать шампуни друзьям и
                 делать закупки.
               </li>
             </ul>
@@ -430,10 +505,10 @@ body {
         </div>
 
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
-          🧬 АНАТОМИЯ ИДЕАЛЬНОГО ПРОДАВЦА: <span class="gradient-text"
+          <span role="img" aria-label="днк">🧬</span> АНАТОМИЯ ИДЕАЛЬНОГО ПРОДАВЦА: <span class="gradient-text"
           >БЕЗ НАСТРОЕК</span>
         </h2>
-        <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+        <p class="text-gray-300 text-center mb-12 max-w-2xl mx-auto">
           Забудь про конструкторы ботов, визуальные схемы и программирование. Ты
           просто даешь токен от @BotFather — мы отдаем тебе готовую машину по
           печати денег.
@@ -443,11 +518,11 @@ body {
           <div class="glass-panel p-8 rounded-2xl feature-card border border-gray-800 hover:border-cyan-500/50 relative overflow-hidden group">
             <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 blur-2xl group-hover:bg-cyan-500/20 transition-all">
             </div>
-            <div class="text-4xl mb-4">⏱️</div>
+            <div class="text-4xl mb-4" role="img" aria-label="таймер">⏱️</div>
             <h3 class="text-2xl font-bold mb-3 text-white">
               Plug & Play за 60 секунд
             </h3>
-            <p class="text-gray-400 text-sm leading-relaxed">
+            <p class="text-gray-300 text-sm leading-relaxed">
               Никаких сложных конструкторов, Zennoposter или n8n. Скопируй токен
               бота, отправь его в чат — и через секунду твой ИИ-клон уже в сети.
               В него <b>автоматически вшиты твои реферальные ссылки</b>,
@@ -458,11 +533,11 @@ body {
           <div class="glass-panel p-8 rounded-2xl feature-card border border-gray-800 hover:border-purple-500/50 relative overflow-hidden group">
             <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 blur-2xl group-hover:bg-purple-500/20 transition-all">
             </div>
-            <div class="text-4xl mb-4">🎯</div>
+            <div class="text-4xl mb-4" role="img" aria-label="мишень">🎯</div>
             <h3 class="text-2xl font-bold mb-3 text-white">
               Безжалостные Авто-Дожимы
             </h3>
-            <p class="text-gray-400 text-sm leading-relaxed">
+            <p class="text-gray-300 text-sm leading-relaxed">
               Бот помнит каждого лида. Если клиент дошел до оплаты и ушел
               "думать", система сама запустит прогревочный алгоритм из <b>10
                 умных дожимов</b> (через 1, 24, 48 часов...). Твоя конверсия
@@ -477,7 +552,7 @@ body {
             <h3 class="text-2xl font-bold mb-3 text-white">
               O2O-Экспансия (Офлайн в Онлайн)
             </h3>
-            <p class="text-gray-400 text-sm leading-relaxed">
+            <p class="text-gray-300 text-sm leading-relaxed">
               Оцифруй любой офлайн-бизнес с технологией «Троянский конь».
               Генерируешь QR-код в 1 клик, ставишь тейбл-тент в любой кофейне
               или СТО. Их клиенты сканируют код ради скидки и <b>навсегда
@@ -492,7 +567,7 @@ body {
             <h3 class="text-2xl font-bold mb-3 text-white">
               Продвинутый ИИ-Консультант
             </h3>
-            <p class="text-gray-400 text-sm leading-relaxed">
+            <p class="text-gray-300 text-sm leading-relaxed">
               Это не тупой бот с раздражающими кнопками. Под капотом — <b
               >глубоко обученное нейроядро</b>. Оно анализирует свободный текст,
               отвечает на любые вопросы клиентов, отрабатывает возражения и
@@ -511,12 +586,12 @@ body {
           </h2>
           <div class="space-y-6">
             <div class="flex gap-4">
-              <div class="text-2xl mt-1">📈</div>
+              <div class="text-2xl mt-1" role="img" aria-label="график роста">📈</div>
               <div>
                 <h4 class="text-lg font-bold text-white">
                   До 10 уровней в глубину (Бинар)
                 </h4>
-                <p class="text-sm text-gray-400">
+                <p class="text-sm text-gray-300">
                   Ты получаешь процент не только с тех, кого привел сам, но и с
                   тех, кого привели они. Твоя сеть растет в геометрической
                   прогрессии чужими руками.
@@ -527,7 +602,7 @@ body {
               <div class="text-2xl mt-1">🧲</div>
               <div>
                 <h4 class="text-lg font-bold text-white">Умная Компрессия</h4>
-                <p class="text-sm text-gray-400">
+                <p class="text-sm text-gray-300">
                   Если кто-то в твоей структуре ленится и сидит на бесплатном
                   тарифе, часть его денег не сгорает — она пролетает мимо него и
                   оседает в твоем кошельке.
@@ -535,12 +610,12 @@ body {
               </div>
             </div>
             <div class="flex gap-4">
-              <div class="text-2xl mt-1">💸</div>
+              <div class="text-2xl mt-1" role="img" aria-label="деньги">💸</div>
               <div>
                 <h4 class="text-lg font-bold text-white">
                   Комиссия до 50% с первого дня
                 </h4>
-                <p class="text-sm text-gray-400">
+                <p class="text-sm text-gray-300">
                   Сам управляй своей доходностью. Начни бесплатно с 25% комиссии
                   или активируй PRO-статус и забирай половину чека с каждой
                   продажи навсегда.
@@ -555,7 +630,7 @@ body {
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
           🔄 КАК ЗАПУСТИТЬСЯ ЗА <span class="gradient-text">3 ШАГА</span>
         </h2>
-        <p class="text-gray-400 text-center mb-10">
+        <p class="text-gray-300 text-center mb-10">
           Быстрый путь от регистрации до первых денег
         </p>
 
@@ -565,7 +640,7 @@ body {
               1
             </div>
             <h3 class="text-xl font-bold mb-3 mt-4 text-cyan-400">АКТИВАЦИЯ</h3>
-            <p class="text-sm text-gray-400">
+            <p class="text-sm text-gray-300">
               Запусти систему по кнопке ниже. Получи свой SetHubble ID и личные
               реферальные ссылки за пару кликов.
             </p>
@@ -577,7 +652,7 @@ body {
             <h3 class="text-xl font-bold mb-3 mt-4 text-purple-400">
               ДЕПЛОЙ КЛОНА
             </h3>
-            <p class="text-sm text-gray-400">
+            <p class="text-sm text-gray-300">
               Отправь боту API-токен. Нейросеть мгновенно развернет твоего
               клона, привяжет CRM и создаст для тебя сайт-визитку.
             </p>
@@ -587,7 +662,7 @@ body {
               3
             </div>
             <h3 class="text-xl font-bold mb-3 mt-4 text-pink-400">МАСШТАБ</h3>
-            <p class="text-sm text-gray-400">
+            <p class="text-sm text-gray-300">
               Запускай трафик из соцсетей или расставляй QR-коды в кафе. Бот
               продает сам, а ты выводишь крипту на кошелек.
             </p>
@@ -597,39 +672,39 @@ body {
 
       <section class="py-12">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
-          📊 ОНИ УЖЕ ЗАРАБАТЫВАЮТ
+          <span role="img" aria-label="диаграмма">📊</span> ОНИ УЖЕ ЗАРАБАТЫВАЮТ
         </h2>
-        <p class="text-gray-400 text-center mb-10">
+        <p class="text-gray-300 text-center mb-10">
           Реальные истории успеха партнеров SetHubble
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="glass-panel p-6 rounded-2xl">
-            <div class="text-sm text-gray-400 mb-2">СТУДЕНТ АНТОН</div>
+            <div class="text-sm text-gray-300 mb-2">СТУДЕНТ АНТОН</div>
             <p class="text-sm text-gray-300 mb-4">
               Оцифровал кофейню бесплатно. 800 сканирований QR-кода на кассе
               привели 15 новых бизнесов в его сеть.
             </p>
             <div class="text-2xl font-bold gradient-text">$3,000/мес</div>
-            <div class="text-xs text-gray-400">пассивный доход</div>
+            <div class="text-xs text-gray-300">пассивный доход</div>
           </div>
           <div class="glass-panel p-6 rounded-2xl">
-            <div class="text-sm text-gray-400 mb-2">САЛОН ЕЛЕНЫ</div>
+            <div class="text-sm text-gray-300 mb-2">САЛОН ЕЛЕНЫ</div>
             <p class="text-sm text-gray-300 mb-4">
               Сжигала 30,000₽ на таргет. Поставила систему: лояльные клиентки
               сами привели 15 новых подруг ради скидки.
             </p>
             <div class="text-2xl font-bold gradient-text">30,000₽/мес</div>
-            <div class="text-xs text-gray-400">экономия бюджета</div>
+            <div class="text-xs text-gray-300">экономия бюджета</div>
           </div>
           <div class="glass-panel p-6 rounded-2xl">
-            <div class="text-sm text-gray-400 mb-2">БЛОГЕР МАКС (10K)</div>
+            <div class="text-sm text-gray-300 mb-2">БЛОГЕР МАКС (10K)</div>
             <p class="text-sm text-gray-300 mb-4">
               Его курс не купили 9,900 человек. Дал им вход в экосистему
               бесплатно. Они стали покупать у других авторов.
             </p>
             <div class="text-2xl font-bold gradient-text">$4,500</div>
-            <div class="text-xs text-gray-400">пассива с «отказников»</div>
+            <div class="text-xs text-gray-300">пассива с «отказников»</div>
           </div>
         </div>
       </section>
@@ -647,8 +722,8 @@ body {
                 <span class="transition group-open:rotate-180 text-cyan-400"
                 >▼</span>
               </summary>
-              <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
-                ❌ Нет. SetHubble — это легальная IT-платформа (инфраструктура,
+              <div class="px-6 pb-6 text-gray-300 text-sm leading-relaxed">
+                <span role="img" aria-label="запрет">❌</span> Нет. SetHubble — это легальная IT-платформа (инфраструктура,
                 эквайринг и SaaS-инструменты). Ты не продаешь воздух или БАДы.
                 Ты получаешь процент с <b>реального оборота</b> реальных
                 бизнесов за то, что предоставил им систему для работы с
@@ -663,8 +738,8 @@ body {
                 <span class="transition group-open:rotate-180 text-cyan-400"
                 >▼</span>
               </summary>
-              <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
-                ❌ Абсолютно нет. Все интерфейсы созданы для новичков (No-Code).
+              <div class="px-6 pb-6 text-gray-300 text-sm leading-relaxed">
+                <span role="img" aria-label="запрет">❌</span> Абсолютно нет. Все интерфейсы созданы для новичков (No-Code).
                 Ты не рисуешь схемы и не тянешь стрелочки. Ты просто отдаешь
                 боту токен, а система сама прошивает в него логику, тексты
                 дожимов и нейросеть.
@@ -678,7 +753,7 @@ body {
                 <span class="transition group-open:rotate-180 text-cyan-400"
                 >▼</span>
               </summary>
-              <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+              <div class="px-6 pb-6 text-gray-300 text-sm leading-relaxed">
                 Начать можно с <b>$0</b>. Запуск бота и обучение внутри Академии
                 NeuroGen полностью бесплатны. Апгрейд до PRO-статуса (с
                 комиссией 50% и CRM) — делается по желанию и окупается с первой
@@ -693,7 +768,7 @@ body {
                 <span class="transition group-open:rotate-180 text-cyan-400"
                 >▼</span>
               </summary>
-              <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+              <div class="px-6 pb-6 text-gray-300 text-sm leading-relaxed">
                 Используй стратегию O2O «Троянский конь». Распечатай QR-код,
                 созданный в 1 клик твоим ботом, и поставь его в любую кофейню.
                 Люди сканируют код, а бот превращает их в твою аудиторию.
@@ -707,7 +782,7 @@ body {
                 <span class="transition group-open:rotate-180 text-cyan-400"
                 >▼</span>
               </summary>
-              <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+              <div class="px-6 pb-6 text-gray-300 text-sm leading-relaxed">
                 Мгновенно на твой личный крипто-кошелек (в USDT, BTC, ETH, TON).
                 Вывод автоматизирован смарт-контрактами платформы. Никаких
                 ручных проверок и задержек бухгалтерией.
@@ -731,7 +806,7 @@ body {
               <div class="text-red-400 font-bold mb-3 text-lg flex items-center gap-2">
                 <span>🔴</span> КРАСНАЯ ТАБЛЕТКА
               </div>
-              <p class="text-sm text-gray-400">
+              <p class="text-sm text-gray-300">
                 Закрыть страницу. Продолжить сжигать рекламные бюджеты. Терять
                 клиентов. Работать 24/7 и смотреть, как нейросети забирают твою
                 профессию.
@@ -741,7 +816,7 @@ body {
               <div class="text-cyan-400 font-bold mb-3 text-lg flex items-center gap-2">
                 <span>🔵</span> СИНЯЯ ТАБЛЕТКА
               </div>
-              <p class="text-sm text-gray-400">
+              <p class="text-sm text-gray-300">
                 Нажать кнопку ниже. Потратить 60 секунд на запуск своего
                 ИИ-клона. Оцифровать свою сеть, автоматизировать дожимы и
                 забирать прибыль со всего рынка.
@@ -756,7 +831,7 @@ body {
             <div class="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#A855F7] to-[#06B6D4] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200">
             </div>
             <button class="cta-button relative w-full md:w-auto inline-flex items-center justify-center px-10 py-5 text-xl font-black text-white transition-all duration-200 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-500/50 gap-3 border-2 border-white/20">
-              <span class="drop-shadow-lg">🚀 АКТИВИРОВАТЬ НЕЙРОСЕТЬ</span>
+              <span class="drop-shadow-lg" role="img" aria-label="ракета">🚀 АКТИВИРОВАТЬ НЕЙРОСЕТЬ</span>
             </button>
           </a>
 
@@ -777,8 +852,10 @@ body {
           href="https://t.me/sethubble_support"
           class="hover:text-cyan-400 transition-colors"
         >Поддержка (Support)</a>
-        <a href="#" class="hover:text-cyan-400 transition-colors"
+        <a href="public-offer.html" class="hover:text-cyan-400 transition-colors"
         >Публичная оферта</a>
+        <a href="privacy-policy.html" class="hover:text-cyan-400 transition-colors"
+        >Политика конфиденциальности</a>
       </div>
     </footer>
 

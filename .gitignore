@@ -69,3 +69,6 @@ htmlcov/
 *.tar.xz
 *.tar.zst
 ```
+# Images
+apple-touch-icon.png
+favicon.svg

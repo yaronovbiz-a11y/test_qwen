@@ -1,5 +1,5 @@
 ---
-title: "SetHubble | Твой ИИ-Клон Зарабатывает 24/7"
+title: "SetHubble | Твой ИИ-Клон Зарабатывает 24/7 — Пассивный Доход с Нейросетью"
 permalink: /join/
 eleventyExcludeFromCollections: true
 
@@ -10,11 +10,64 @@ eleventyExcludeFromCollections: true
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <meta
-      name="description"
-      content="Построй атомный реактор пассивного дохода за 1 минуту без программирования и вложений."
-    >
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Построй атомный реактор пассивного дохода за 1 минуту без программирования и вложений. ИИ-бот для автоматизации продаж и партнерской сети.">
+    <meta name="keywords" content="пассивный доход, ИИ бот, нейросеть, автоматизация продаж, партнерская программа, телеграм бот, SetHubble, онлайн бизнес, крипто выплаты, реферальная система">
+    <meta name="author" content="SetHubble">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sethubble.com/join/">
+    <meta property="og:title" content="SetHubble | Твой ИИ-Клон Зарабатывает 24/7">
+    <meta property="og:description" content="Перестань работать за деньги. Заставь технологии работать на тебя. Оцифруй сарафанное радио и получай пассивный доход со всего мира.">
+    <meta property="og:image" content="https://sethubble.com/assets/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://sethubble.com/join/">
+    <meta name="twitter:title" content="SetHubble | Твой ИИ-Клон Зарабатывает 24/7">
+    <meta name="twitter:description" content="Построй атомный реактор пассивного дохода за 1 минуту без программирования и вложений.">
+    <meta name="twitter:image" content="https://sethubble.com/assets/twitter-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sethubble.com/join/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://mc.yandex.ru">
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Yandex.Metrica Counter -->
+    <script type="text/javascript">
+      const YANDEX_METRICA_ID = 98765432; // Замените на ваш номер счетчика
+      
+      (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for(var j=0;j<document.scripts.length;j++){
+          if(document.scripts[j].src===r)return;
+        }
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+
+      if (typeof YANDEX_METRICA_ID === 'number' && YANDEX_METRICA_ID > 0) {
+        ym(YANDEX_METRICA_ID, "init", {
+          clickmap: true,
+          trackLinks: true,
+          accurateTrackBounce: true,
+          webvisor: true
+        });
+      }
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/YANDEX_METRICA_ID" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrica Counter -->
     <style>
 @keyframes blob {
   0% {
@@ -40,32 +93,182 @@ eleventyExcludeFromCollections: true
   animation-delay: 4s;
 }
 
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #050505;
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
 }
+
 .glass-panel {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
 }
+
 .gradient-text {
   background: linear-gradient(to right, #a855f7, #06b6d4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+.feature-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .feature-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(168, 85, 247, 0.4);
-  box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.2);
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 20px 40px -15px rgba(168, 85, 247, 0.3),
+              0 0 30px rgba(168, 85, 247, 0.1);
+}
+
+/* Button glow effect */
+.js-bot-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.js-bot-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.js-bot-link:hover::before {
+  left: 100%;
+}
+
+/* Animated gradient border */
+.animated-border {
+  position: relative;
+  background: linear-gradient(#050505, #050505) padding-box,
+              linear-gradient(45deg, #a855f7, #06b6d4, #a855f7) border-box;
+  border: 2px solid transparent;
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Fade-in animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Pulse animation for stats */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(168, 85, 247, 0.4); }
+}
+
+.stat-card {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(to right, #a855f7, #06b6d4);
+  z-index: 1000;
+  transition: width 0.1s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #a855f7, #06b6d4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #c084fc, #22d3ee);
+}
+
+/* Floating particles */
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(168, 85, 247, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float-particle 15s infinite;
+}
+
+@keyframes float-particle {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Text reveal animation */
+.text-reveal {
+  background: linear-gradient(to right, #fff 50%, rgba(255,255,255,0.3) 50%);
+  background-size: 200% 100%;
+  background-position: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.8s ease;
+}
+
+.text-reveal.visible {
+  background-position: 0%;
 }
 
 </style>
   </head>
   <body class="relative min-h-screen flex flex-col items-center p-4">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Floating Particles Container -->
+    <div id="particles-container" class="fixed inset-0 pointer-events-none overflow-hidden -z-5"></div>
+    
     <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10">
       <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob">
       </div>
@@ -116,7 +319,7 @@ body {
         </a>
 
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-16 max-w-4xl mx-auto">
-          <div class="glass-panel p-4 rounded-xl">
+          <div class="glass-panel p-4 rounded-xl stat-card">
             <div class="text-2xl md:text-3xl font-bold gradient-text">
               $15,000+
             </div>
@@ -124,7 +327,7 @@ body {
               Выплачено партнерам (24ч)
             </div>
           </div>
-          <div class="glass-panel p-4 rounded-xl">
+          <div class="glass-panel p-4 rounded-xl stat-card">
             <div class="text-2xl md:text-3xl font-bold gradient-text">
               2,500+
             </div>
@@ -132,7 +335,7 @@ body {
               Новых ИИ-агентов в сети
             </div>
           </div>
-          <div class="glass-panel p-4 rounded-xl hidden md:block">
+          <div class="glass-panel p-4 rounded-xl hidden md:block stat-card">
             <div class="text-2xl md:text-3xl font-bold gradient-text">22+</div>
             <div class="text-xs text-gray-400 mt-1">Страны присутствия</div>
           </div>
@@ -559,54 +762,230 @@ body {
     </footer>
 
     <script>
-    // Локальный скрипт для join.njk (дублирует глобальный для надежности)
-document.addEventListener("DOMContentLoaded", () => {
-  const DEFAULT_BOT = "sethubble_biz_bot";
-  const urlParams = new URLSearchParams(window.location.search);
-  let encryptedId = urlParams.get("page");
-  let refBot = null;
+    // ============================================
+    // SetHubble Landing Page - Enhanced JavaScript
+    // ============================================
+    
+    // Bot link handler with Yandex Metrica tracking
+    document.addEventListener("DOMContentLoaded", () => {
+      const DEFAULT_BOT = "sethubble_biz_bot";
+      const urlParams = new URLSearchParams(window.location.search);
+      let encryptedId = urlParams.get("page");
+      let refBot = null;
 
-  const fromHex = (hex) => {
-    try {
-      let str = "";
-      for (let i = 0; i < hex.length; i += 2) {
-        str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+      const fromHex = (hex) => {
+        try {
+          let str = "";
+          for (let i = 0; i < hex.length; i += 2) {
+            str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+          }
+          return str;
+        } catch (e) {
+          return null;
+        }
+      };
+
+      if (encryptedId) {
+        const decoded = fromHex(encryptedId);
+        if (decoded) {
+          refBot = decoded.replace("@", "").trim();
+          localStorage.setItem("neurogen_partner_bot", refBot);
+        }
       }
-      return str;
-    } catch (e) {
-      return null;
-    }
-  };
 
-  if (encryptedId) {
-    const decoded = fromHex(encryptedId);
-    if (decoded) {
-      refBot = decoded.replace("@", "").trim();
-      localStorage.setItem("neurogen_partner_bot", refBot);
-    }
-  }
+      if (!refBot) {
+        refBot = localStorage.getItem("neurogen_partner_bot");
+      }
 
-  if (!refBot) {
-    refBot = localStorage.getItem("neurogen_partner_bot");
-  }
+      if (!refBot) {
+        refBot = DEFAULT_BOT;
+      }
 
-  if (!refBot) {
-    refBot = DEFAULT_BOT;
-  }
+      const targetUrl = `https://t.me/${refBot}`;
+      const ctaLinks = document.querySelectorAll(".js-bot-link");
+      
+      ctaLinks.forEach(link => {
+        link.href = targetUrl;
+        
+        // Track clicks with Yandex Metrica
+        link.addEventListener('click', () => {
+          if (typeof ym === 'function' && typeof YANDEX_METRICA_ID === 'number') {
+            ym(YANDEX_METRICA_ID, 'reachGoal', 'bot_link_click');
+          }
+          console.log('Bot link clicked:', targetUrl);
+        });
+      });
 
-  const targetUrl = `https://t.me/${refBot}`;
-  const ctaLinks = document.querySelectorAll(".js-bot-link");
-  ctaLinks.forEach(link => {
-    link.href = targetUrl;
-  });
-
-  const badge = document.getElementById("partner-badge");
-  const nameEl = document.getElementById("partner-name");
-  if (badge && nameEl && refBot !== DEFAULT_BOT) {
-    nameEl.textContent = `@${refBot}`;
-    badge.classList.remove("hidden");
-  }
-});
+      const badge = document.getElementById("partner-badge");
+      const nameEl = document.getElementById("partner-name");
+      if (badge && nameEl && refBot !== DEFAULT_BOT) {
+        nameEl.textContent = `@${refBot}`;
+        badge.classList.remove("hidden");
+      }
+      
+      // ============================================
+      // Scroll Progress Bar
+      // ============================================
+      const scrollProgress = document.getElementById('scrollProgress');
+      
+      window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercent = (scrollTop / scrollHeight) * 100;
+        scrollProgress.style.width = scrollPercent + '%';
+      });
+      
+      // ============================================
+      // Floating Particles
+      // ============================================
+      const particlesContainer = document.getElementById('particles-container');
+      const particleCount = 20;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        particlesContainer.appendChild(particle);
+      }
+      
+      // ============================================
+      // Fade-in Animations on Scroll
+      // ============================================
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+      
+      // Observe all sections and feature cards
+      document.querySelectorAll('section, .feature-card, .glass-panel').forEach(el => {
+        el.classList.add('fade-in-up');
+        observer.observe(el);
+      });
+      
+      // ============================================
+      // Smooth Scroll for Anchor Links
+      // ============================================
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+      
+      // ============================================
+      // Parallax Effect for Background Blobs
+      // ============================================
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const blobs = document.querySelectorAll('.animate-blob');
+        blobs.forEach((blob, index) => {
+          const speed = 0.1 + (index * 0.05);
+          blob.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+      });
+      
+      // ============================================
+      // Button Ripple Effect
+      // ============================================
+      document.querySelectorAll('.js-bot-link button').forEach(button => {
+        button.addEventListener('mouseenter', (e) => {
+          const rect = button.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const ripple = document.createElement('span');
+          ripple.style.cssText = `
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+            left: ${x}px;
+            top: ${y}px;
+            width: 100px;
+            height: 100px;
+            margin-left: -50px;
+            margin-top: -50px;
+          `;
+          
+          button.style.position = 'relative';
+          button.style.overflow = 'hidden';
+          button.appendChild(ripple);
+          
+          setTimeout(() => ripple.remove(), 600);
+        });
+      });
+      
+      // Add ripple keyframes dynamically
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes ripple {
+          to {
+            transform: scale(4);
+            opacity: 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+      
+      // ============================================
+      // Counter Animation for Stats
+      // ============================================
+      const animateCounter = (element, target, suffix = '') => {
+        let current = 0;
+        const increment = target / 50;
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            element.textContent = target.toLocaleString() + suffix;
+            clearInterval(timer);
+          } else {
+            element.textContent = Math.floor(current).toLocaleString() + suffix;
+          }
+        }, 30);
+      };
+      
+      // Trigger counter animation when stats are visible
+      const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+            entry.target.classList.add('animated');
+            const gradientText = entry.target.querySelector('.gradient-text');
+            if (gradientText) {
+              const text = gradientText.textContent;
+              const number = parseInt(text.replace(/[^0-9]/g, ''));
+              if (text.includes('$')) {
+                animateCounter(gradientText, number, '$');
+              } else if (text.includes('+') || text.match(/^\d+$/)) {
+                animateCounter(gradientText, number, '+');
+              }
+            }
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      document.querySelectorAll('.stat-card').forEach(card => {
+        statsObserver.observe(card);
+      });
+    });
     </script>
   </body>
 </html>
